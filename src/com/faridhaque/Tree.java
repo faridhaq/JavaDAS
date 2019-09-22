@@ -46,6 +46,43 @@ public class Tree {
 
     }
 
+    public void traversalPreOrder(){
+        traversalPreOrder(root);
+    }
+
+    public void traversalInOrder(){
+        traversalInOrder(root);
+    }
+
+    private void traversalInOrder(Node root){
+        if(root==null)
+            return;
+        traversalInOrder(root.leftChild);
+        System.out.println(root.value);
+        traversalInOrder(root.rightChild);
+    }
+
+
+    private void traversalPreOrder(Node root){
+        if (root==null)
+            return;
+        System.out.println(root.value);
+        traversalPreOrder(root.leftChild);
+        traversalPreOrder(root.rightChild);
+    }
+
+public int height(){
+        return height(root);
+}
+    private int height(Node root){
+        if(root==null)
+            return -1;
+
+        if(root.leftChild==null && root.rightChild==null)
+            return 0;
+        return 1 + Math.max(height(root.leftChild),height(root.rightChild));
+    }
+
     public boolean find(int value){
         var current=root;
         while(current!=null) {

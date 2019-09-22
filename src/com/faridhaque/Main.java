@@ -7,6 +7,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+
+
         Tree tree=new Tree();
         tree.insert(7);
         tree.insert(4);
@@ -15,8 +17,8 @@ public class Main {
         tree.insert(6);
         tree.insert(8);
         tree.insert(10);
-        System.out.println("Done");
-        System.out.println(tree.find(4));
+       //tree.traversalInOrder();
+        System.out.println(tree.height());
 
     }
 }
